@@ -1,5 +1,7 @@
 package at.campus02.zam.ss2022;
 
+import java.util.Objects;
+
 public class Account {
     private static int uniqueID = 1;
 
@@ -47,5 +49,18 @@ public class Account {
                 ", accountID=" + accountID +
                 ", balance=" + balance +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return Objects.equals(iban, account.iban);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(iban);
     }
 }
