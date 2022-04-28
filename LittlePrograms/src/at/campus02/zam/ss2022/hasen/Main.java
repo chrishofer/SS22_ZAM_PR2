@@ -1,5 +1,7 @@
 package at.campus02.zam.ss2022.hasen;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Osterhase oster = new Osterhase("Bugs");
@@ -78,6 +80,16 @@ public class Main {
         wh = (Weihnachtshase) h;
         h.hoppeln();
         wh.hoppeln();
+
+
+        // interface example
+        ArrayList<GoesToParty> partyPeople = new ArrayList<>();
+        partyPeople.add(wh);
+
+        for(GoesToParty p : partyPeople){
+            p.party("alcoholfree champagne", "unicorn cake");
+        }
+
 
     }
 }
