@@ -1,0 +1,5 @@
+package at.campus02.iwi;
+
+public enum RoomType {
+    BEDROOM, KITCHEN, LIVINGROOM, EATINKITCHEN, STOREROOM, TOILET, BATHROOM, CORRIDOR
+}
