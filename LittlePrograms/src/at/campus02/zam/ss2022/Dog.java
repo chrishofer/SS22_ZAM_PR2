@@ -1,6 +1,6 @@
 package at.campus02.zam.ss2022;
 
-public class Dog {
+public class Dog implements Comparable<Dog> {
     public String name;
     public String eyeColor;
     public int weight;
@@ -37,5 +37,25 @@ public class Dog {
         }
 
         return text;
+    }
+    // sort with two criteria:
+    // first criteria is name
+    // second criteria is weight
+    @Override
+    public int compareTo(Dog o) {
+
+        // first name
+        int ergFirst = this.name.compareTo(o.name);
+        if(ergFirst != 0){
+            return ergFirst; // so we either have positive or negative value
+        }
+        // second: weight - only look at whenf first crit. is undecided (0)
+        if(this.weight < o.weight){
+            return -1;
+        }
+        if(this.weight > o.weight){
+            return 1;
+        }
+        return 0;
     }
 }
